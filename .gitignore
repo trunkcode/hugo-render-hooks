@@ -1,2 +1,9 @@
-# Temporary files
+# system files
 .DS_Store
+
+# IDE files
+.idea
+
+# VS Code
+/.vscode/**
+!/.vscode/cspell.json

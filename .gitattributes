@@ -1,0 +1,5 @@
+# Set the default behavior, in case people don't have `core.autocrlf` set.
+* text=auto
+
+# Remove files for archives generated using `git archive`.
+/.* export-ignore
