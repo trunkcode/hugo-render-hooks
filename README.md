@@ -4,7 +4,7 @@
 
 - `target` and `rel` attribute on external link
 - `title` attribute on link and image elements
-- Font Awesome external icon on external link (Need Font Awesome in theme)
+- [Add Font Awesome external icon using configuration](#add-font-awesome-external-icon)
 
 ## Install
 
@@ -61,20 +61,20 @@ module:
 
 ## Configuration
 
-### Remove external icon from the link
+### Add Font Awesome external icon
 
 #### params.toml
 
 ```toml
 [hugoSeo]
-  externalLinkIcon = false
+  faExternalIcon = true
 ```
 
 #### params.yaml
 
 ```yml
 hugoSeo:
-  externalLinkIcon: false
+  faExternalIcon: true
 ```
 
 #### params.json
@@ -82,7 +82,7 @@ hugoSeo:
 ```json
 {
   "hugoSeo": {
-    "externalLinkIcon": false
+    "faExternalIcon": true
   }
 }
 ```
