@@ -20,9 +20,6 @@ Add the settings in the following snippet at the end of your site configuration 
 
 ```toml
 [module]
-  [module.hugoVersion]
-    extended = true
-    min = "0.73.0"
   [[module.imports]]
     path = "github.com/trunkcode/hugo-seo"
     disable = false
@@ -32,9 +29,6 @@ Add the settings in the following snippet at the end of your site configuration 
 
 ```yml
 module:
-  hugoVersion:
-    extended: true
-    min: 0.73.0
   imports:
     - path: github.com/trunkcode/hugo-seo
       disable: false
@@ -45,10 +39,6 @@ module:
 ```json
 {
   "module": {
-    "hugoVersion": {
-      "extended": true,
-      "min": "0.73.0"
-    },
     "imports": [
       {
         "path": "github.com/trunkcode/hugo-seo",
