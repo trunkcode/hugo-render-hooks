@@ -1,12 +1,12 @@
 {{ $externalLink := false }}
-{{ $externalLinkIcon := true }}
+{{ $faExternalIcon := false }}
 
 {{ if or (strings.HasPrefix .Destination "http://" ) (strings.HasPrefix .Destination "https://" ) (strings.HasPrefix .Destination "//" ) }}
   {{ $externalLink = true }}
 
-  {{ if and (.Page.Site.Params.hugoSeo) (eq .Page.Site.Params.hugoSeo.externalLinkIcon false) }}
-    {{ $externalLinkIcon = false }}
+  {{ if and (.Page.Site.Params.hugoSeo) (eq .Page.Site.Params.hugoSeo.faExternalIcon true) }}
+    {{ $faExternalIcon = true }}
   {{ end }}
 {{ end }}
 
-<a href="{{ .Destination | safeURL }}" title="{{ if .Title }}{{ .Title | safeHTMLAttr }}{{ else }}{{ .Text | safeHTMLAttr }}{{ end }}"{{ if $externalLink }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}{{ if and ($externalLink) ($externalLinkIcon) }}<i class="link-external-icon fas fa-external-link-alt"></i>{{ end }}</a>
+<a href="{{ .Destination | safeURL }}" title="{{ if .Title }}{{ .Title | safeHTMLAttr }}{{ else }}{{ .Text | safeHTMLAttr }}{{ end }}"{{ if $externalLink }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}{{ if and ($externalLink) ($faExternalIcon) }}<i class="link-external-icon fas fa-external-link-alt"></i>{{ end }}</a>
