@@ -2,6 +2,12 @@
 
 Useful links: Hugo SEO [releases][] & [tags][]. Jump to the [latest][] release.
 
+## [0.3.0][]
+
+- **Enhancements**
+  - Add width and height attributes on image
+  - Define list of host(s) not to be used as external link
+
 ## [0.2.0][]
 
 - **Enhancements**
