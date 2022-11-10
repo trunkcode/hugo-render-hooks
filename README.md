@@ -4,7 +4,7 @@
 
 - `target` and `rel` attribute on external link
 - `title` attribute on link and image elements
-- [Add Font Awesome external icon using configuration](#add-font-awesome-external-icon)
+- [Add Font Awesome external icon using configuration](#faexternalicon)
 
 ## Install
 
@@ -61,31 +61,52 @@ module:
 
 ## Configuration
 
-### Add Font Awesome external icon
-
-#### params.toml
+#### config.toml
 
 ```toml
-[hugoSeo]
-  faExternalIcon = true
+[Params]
+  [hugoSeo]
+    faExternalIcon = true
+    relValue = "noreferrer nofollow"
 ```
 
-#### params.yaml
+#### config.yaml
 
 ```yml
-hugoSeo:
-  faExternalIcon: true
+Params:
+  hugoSeo:
+    faExternalIcon: true
+    relValue: "noreferrer nofollow"
 ```
 
-#### params.json
+#### config.json
 
 ```json
 {
-  "hugoSeo": {
-    "faExternalIcon": true
+  "Params": {
+    "hugoSeo": {
+      "faExternalIcon": true,
+      "relValue": "noreferrer nofollow"
+    }
   }
 }
 ```
+
+## Configuration Settings
+
+The following is the full list of **Hugo Seo** variables with their default value. Users may choose to override those values in their site config file(s).
+
+### faExternalIcon
+
+Default value: false
+
+Add Font Awesome external icon on the external links.
+
+### relValue
+
+Default value: "noopener"
+
+Specifies the relationship between the current document and the linked document.
 
 ## License ![GitHub](https://img.shields.io/github/license/trunkcode/hugo-seo)
 
