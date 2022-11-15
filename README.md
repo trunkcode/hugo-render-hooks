@@ -9,7 +9,7 @@
 ## Install
 
 ```bash
-hugo mod get github.com/trunkcode/hugo-seo@v0.1.0
+hugo mod get github.com/trunkcode/hugo-seo@v0.2.1
 ```
 
 ## Add theme module configuration settings
