@@ -16,4 +16,4 @@
   {{ end }}
 {{ end }}
 
-<a href="{{ .Destination | safeURL }}" title="{{ if .Title }}{{ .Title | safeHTMLAttr }}{{ else }}{{ .Text | safeHTMLAttr }}{{ end }}"{{ if $externalLink }} target="_blank" rel="{{ $relValue }}"{{ end }}>{{ .Text | safeHTML }}{{ if and ($externalLink) ($faExternalIcon) }}<i class="link-external-icon fas fa-external-link-alt"></i>{{ end }}</a>
+<a href="{{ .Destination | safeURL }}" title="{{ if .Title }}{{ .Title | plainify }}{{ else }}{{ .Text | plainify }}{{ end }}"{{ if $externalLink }} target="_blank" rel="{{ $relValue }}"{{ end }}>{{ .Text | safeHTML }}{{ if and ($externalLink) ($faExternalIcon) }}<i class="link-external-icon fas fa-external-link-alt"></i>{{ end }}</a>

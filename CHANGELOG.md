@@ -5,6 +5,7 @@ Useful links: Hugo SEO [releases][] & [tags][]. Jump to the [latest][] release.
 ## [0.3.0][]
 
 - **Enhancements**
+  - Strip the string from HTML tags
   - Add width and height attributes on image
   - Define list of host(s) not to be used as external link
 
