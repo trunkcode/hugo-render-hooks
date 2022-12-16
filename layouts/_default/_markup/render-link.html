@@ -1,19 +1,18 @@
-{{ $externalLink := false }}
-{{ $faExternalIcon := false }}
-{{ $relValue := "noopener" }}
+{{- $externalLink := false -}}
+{{- $faExternalIcon := false -}}
+{{- $relValue := "noopener" -}}
 
-{{ if or (strings.HasPrefix .Destination "http://" ) (strings.HasPrefix .Destination "https://" ) (strings.HasPrefix .Destination "//" ) }}
+{{- if or (strings.HasPrefix .Destination "http://" ) (strings.HasPrefix .Destination "https://" ) (strings.HasPrefix .Destination "//" ) -}}
   {{ $externalLink = true }}
-
-  {{ if .Page.Site.Params.hugoSeo }}
-    {{ if .Page.Site.Params.hugoSeo.relValue }}
+  {{- if .Page.Site.Params.hugoSeo -}}
+    {{- if .Page.Site.Params.hugoSeo.relValue -}}
       {{ $relValue = .Page.Site.Params.hugoSeo.relValue }}
-    {{ end }}
+    {{- end -}}
 
-    {{ if eq .Page.Site.Params.hugoSeo.faExternalIcon true }}
+    {{- if eq .Page.Site.Params.hugoSeo.faExternalIcon true -}}
       {{ $faExternalIcon = true }}
-    {{ end }}
-  {{ end }}
-{{ end }}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
 <a href="{{ .Destination | safeURL }}" title="{{ if .Title }}{{ .Title | plainify }}{{ else }}{{ .Text | plainify }}{{ end }}"{{ if $externalLink }} target="_blank" rel="{{ $relValue }}"{{ end }}>{{ .Text | safeHTML }}{{ if and ($externalLink) ($faExternalIcon) }}<i class="link-external-icon fas fa-external-link-alt"></i>{{ end }}</a>
